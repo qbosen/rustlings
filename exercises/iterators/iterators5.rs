@@ -7,6 +7,8 @@
 // Only the two iterator methods (count_iterator and count_collection_iterator)
 // need to be modified.
 // Execute `rustlings hint iterators5` or use the `hint` watch subcommand for a hint.
+//
+// Make the code compile and the tests pass.
 
 use std::collections::HashMap;
 
