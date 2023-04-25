@@ -9,9 +9,12 @@
 // I AM NOT DONE
 
 fn main() {
-    let vec0 = Vec::new();
+    let mut vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0);
+    // opt1: vec0.clone()
+    // opt2: pass a &mut vec0, and return vec.clone
+
+    let mut vec1 = fill_vec(&mut vec0);
 
     // Do not change the following line!
     println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
@@ -21,12 +24,10 @@ fn main() {
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 }
 
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let mut vec = vec;
-
+fn fill_vec(vec: &mut Vec<i32>) -> Vec<i32> {
     vec.push(22);
     vec.push(44);
     vec.push(66);
 
-    vec
+    vec.clone()
 }
